@@ -1,22 +1,16 @@
 #include "ll.h"
 #include <stddef.h>
 #include <stdio.h>
+#include <string.h>
+
 
 void test1 (void) {
-    static struct singly_linked nodes[20];
-    struct singly_linked *root = nodes;
+    struct singly_linked *root = create_ordered_list(20);
 
-    for(int i = 0; i < sizeof(nodes)/sizeof(*nodes); i++) {
-        init_node(nodes + i, i);
-        if(i) {
-            insert_node(nodes + i - 1, nodes + i);
-        }
-    }
     print_list(root);
 }
 
-int main(void) {
-    test1();
+void test2(void) {
     struct singly_linked *root = NULL, first;
     init_node(&first, 1);
     root = &first;
@@ -24,5 +18,24 @@ int main(void) {
     puts("printed first");
     NODE(root, 2);
     print_list(root);
+}
+
+void test_reverse(int total_nodes) {
+    struct singly_linked *root = create_ordered_list(20); 
+
+    puts("-- INITIAL LIST --");
+    print_list(root);
+
+    reverse_list(&root);
+
+    puts("-- FINAL LIST --");
+    print_list(root);
+}
+
+int main(void) {
+    create_ordered_list(-1);
+    create_ordered_list(200);
+    test1();
+    test_reverse(5);
     return 0;
 }

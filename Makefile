@@ -11,14 +11,14 @@ tests.o: tests.c
 linkedlib: ll.o
 	gcc ll.o -o ll
 
-tests: tests.o ll.o
+tests: clean tests.o ll.o
 	gcc ll.o tests.o -o tests
 
 all: tests
 
 clean:
-	@rm -f *.o
-	@rm -f tests
+	rm -f *.o
+	rm -f tests
 
 test: tests
 	./tests
