@@ -1,7 +1,6 @@
 #include "ll.h"
 #include <stddef.h>
 #include <stdio.h>
-#include <string.h>
 
 
 void test1 (void) {

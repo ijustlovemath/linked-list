@@ -115,6 +115,10 @@ void reverse_list(const struct singly_linked **root) {
         next = next->next;
     };
 
+    // At the very end, we've disconnected the new root from the rest,
+    // so connect it back to everything else!
+    // TODO: there's probably a way to reorder the steps to remove
+    // the need to do this
     current->next = previous;
 
     *root = current;
