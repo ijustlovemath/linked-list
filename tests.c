@@ -20,7 +20,8 @@ void test2(void) {
 }
 
 void test_reverse(int total_nodes) {
-    struct singly_linked *root = create_ordered_list(20); 
+    printf("## List reversal test: %d nodes ##\n", total_nodes);
+    struct singly_linked *root = create_ordered_list(total_nodes); 
 
     puts("-- INITIAL LIST --");
     print_list(root);
@@ -36,5 +37,7 @@ int main(void) {
     create_ordered_list(200);
     test1();
     test_reverse(5);
+    test_reverse(1);
+    test_reverse(0);
     return 0;
 }

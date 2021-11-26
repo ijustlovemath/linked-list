@@ -16,12 +16,14 @@ void print_list(const struct singly_linked *root) {
         print_node(root);
         root = root->next;
     }
+    // We know it's NULL, so save the call to print_node
     puts("NULL");
 }
 
 void init_node(struct singly_linked *new, int value) {
     if(new) {
         new->value = value;
+        // To test automatic clearing of nodes, comment this out
         new->next = NULL;
     }
 }
@@ -45,12 +47,17 @@ int insert_node(struct singly_linked *root, struct singly_linked *new) {
 struct singly_linked* create_ordered_list(int total_nodes) {
     static struct singly_linked nodes[100];
 
-    if(total_nodes <= 0 || total_nodes > 100) {
+    if(total_nodes < 0 || total_nodes > 100) {
         puts("invalid number of nodes requested");
         return NULL;
     }
 
-    // Clear them out
+    // Degenerate but valid case
+    if(total_nodes == 0) {
+        return NULL;
+    }
+
+    // Clear them out; this *automagically* sets all next pointers to NULL!
     memset(nodes, 0, sizeof(nodes));
 
     for(int i = 0; i < total_nodes; i++) {
