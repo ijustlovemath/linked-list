@@ -3,5 +3,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout the code
+        uses: actions/checkout@v2
       - name: build and test the code
         run: make test
