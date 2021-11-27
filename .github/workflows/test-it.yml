@@ -1,0 +1,7 @@
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build and test the code
+      - run: make test

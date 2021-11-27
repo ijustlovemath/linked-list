@@ -25,4 +25,4 @@ int insert_node(struct singly_linked *, struct singly_linked *);
 void init_node(struct singly_linked *new, int value);
 void print_list(const struct singly_linked *root);
 struct singly_linked* create_ordered_list(int total_nodes);
-void reverse_list(const struct singly_linked **root);
+void reverse_list(struct singly_linked **root);

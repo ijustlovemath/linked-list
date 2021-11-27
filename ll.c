@@ -70,7 +70,7 @@ struct singly_linked* create_ordered_list(int total_nodes) {
 
 }
 
-void reverse_list(const struct singly_linked **root) {
+void reverse_list(struct singly_linked **root) {
     /**
      * 1. starting at root:
      *  the * represents our current node
