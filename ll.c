@@ -87,9 +87,9 @@ struct singly_linked* create_ordered_list(int total_nodes) {
     // return addresses in this array and they will
     // still be valid after this function returns!
     //
-    // This is an easy way to use stack based memory,
-    // but with the ergonomics and ease-of-use of the
-    // heap.
+    // This is an easy way to use heap based memory,
+    // but with the ease-of-use of the stack and no
+    // need to worry about memory management
     //
     // This approach does not work when:
     // 1) the code is multi-threaded
